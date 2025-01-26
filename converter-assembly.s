@@ -136,6 +136,17 @@ ConvertToOld
     MUL    R6, R5, #12      ; Calculate remainder
     SUB    R6, R4, R6       ; R6 = remaining pence
 
+    ; Print result
+    ADRL   R0, result_txt
+    SWI    3
+    
+    MOV    R0, R5
+    ADRL   R0, shillings_txt
+    SWI    3
+    
+    MOV    R0, R6
+    ADRL   R0, pence_txt
+    SWI    3
     
     LDMFD  R13!, {R4-R6, LR}
     MOV    PC, LR
