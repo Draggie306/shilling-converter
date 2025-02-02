@@ -1,0 +1,321 @@
+KMD
+00000000: EA000072    ; B   main
+00000004:             ; 
+00000004: 57 65 6C 63 ; shilling_intro_txt  DEFB "Welcome to the shilling converter\n",0
+00000008: 6F 6D 65 20 ; 
+0000000C: 74 6F 20 74 ; 
+00000010: 68 65 20 73 ; 
+00000014: 68 69 6C 6C ; 
+00000018: 69 6E 67 20 ; 
+0000001C: 63 6F 6E 76 ; 
+00000020: 65 72 74 65 ; 
+00000024: 72 0A 00    ; 
+00000027: 57 6F 75 6C ; how_to_convert      DEFB  "Would you like to:\n1) Convert from old English currency to the metr
+0000002B: 64 20 79 6F ; ic equivalent\n\n--or--\n\n2) Convert the present-day metric system to the pre-1971 system?\n",
+0000002F: 75 20 6C 69 ; 0
+00000033: 6B 65 20 74 ; 
+00000037: 6F 3A 0A 31 ; 
+0000003B: 29 20 43 6F ; 
+0000003F: 6E 76 65 72 ; 
+00000043: 74 20 66 72 ; 
+00000047: 6F 6D 20 6F ; 
+0000004B: 6C 64 20 45 ; 
+0000004F: 6E 67 6C 69 ; 
+00000053: 73 68 20 63 ; 
+00000057: 75 72 72 65 ; 
+0000005B: 6E 63 79 20 ; 
+0000005F: 74 6F 20 74 ; 
+00000063: 68 65 20 6D ; 
+00000067: 65 74 72 69 ; 
+0000006B: 63 20 65 71 ; 
+0000006F: 75 69 76 61 ; 
+00000073: 6C 65 6E 74 ; 
+00000077: 0A 0A 2D 2D ; 
+0000007B: 6F 72 2D 2D ; 
+0000007F: 0A 0A 32 29 ; 
+00000083: 20 43 6F 6E ; 
+00000087: 76 65 72 74 ; 
+0000008B: 20 74 68 65 ; 
+0000008F: 20 70 72 65 ; 
+00000093: 73 65 6E 74 ; 
+00000097: 2D 64 61 79 ; 
+0000009B: 20 6D 65 74 ; 
+0000009F: 72 69 63 20 ; 
+000000A3: 73 79 73 74 ; 
+000000A7: 65 6D 20 74 ; 
+000000AB: 6F 20 74 68 ; 
+000000AF: 65 20 70 72 ; 
+000000B3: 65 2D 31 39 ; 
+000000B7: 37 31 20 73 ; 
+000000BB: 79 73 74 65 ; 
+000000BF: 6D 3F 0A 00 ; 
+000000C3: 0A 45 6E 74 ; choice_prompt       DEFB   "\nEnter your choice: ",0
+000000C7: 65 72 20 79 ; 
+000000CB: 6F 75 72 20 ; 
+000000CF: 63 68 6F 69 ; 
+000000D3: 63 65 3A 20 ; 
+000000D7: 00          ; 
+000000D8: 0A 43 6F 6E ; chosen_metric_to_shilling DEFB "\nConverting from metric to shilling confirmed.\n",0
+000000DC: 76 65 72 74 ; 
+000000E0: 69 6E 67 20 ; 
+000000E4: 66 72 6F 6D ; 
+000000E8: 20 6D 65 74 ; 
+000000EC: 72 69 63 20 ; 
+000000F0: 74 6F 20 73 ; 
+000000F4: 68 69 6C 6C ; 
+000000F8: 69 6E 67 20 ; 
+000000FC: 63 6F 6E 66 ; 
+00000100: 69 72 6D 65 ; 
+00000104: 64 2E 0A 00 ; 
+00000108: 0A 43 6F 6E ; chosen_shilling_to_metric DEFB "\nConverting from shilling to metric confirmed.\n",0
+0000010C: 76 65 72 74 ; 
+00000110: 69 6E 67 20 ; 
+00000114: 66 72 6F 6D ; 
+00000118: 20 73 68 69 ; 
+0000011C: 6C 6C 69 6E ; 
+00000120: 67 20 74 6F ; 
+00000124: 20 6D 65 74 ; 
+00000128: 72 69 63 20 ; 
+0000012C: 63 6F 6E 66 ; 
+00000130: 69 72 6D 65 ; 
+00000134: 64 2E 0A 00 ; 
+00000138: 0A 0A 46 49 ; result_txt          DEFB     "\n\nFINAL RESULT: ",0
+0000013C: 4E 41 4C 20 ; 
+00000140: 52 45 53 55 ; 
+00000144: 4C 54 3A 20 ; 
+00000148: 00          ; 
+00000149: C2 A3 20 28 ; pounds_txt          DEFB     "£ (pounds) ",0
+0000014D: 70 6F 75 6E ; 
+00000151: 64 73 29 20 ; 
+00000155: 00          ; 
+00000156: 20 61 6E 64 ; and_txt             DEFB         " and ",0
+0000015A: 20 00       ; 
+0000015C: 73 20 28 73 ; shillings_txt       DEFB   "s (shillings) ",0
+00000160: 68 69 6C 6C ; 
+00000164: 69 6E 67 73 ; 
+00000168: 29 20 00    ; 
+0000016B: 64 20 28 70 ; pence_txt           DEFB       "d (pence)\n",0
+0000016F: 65 6E 63 65 ; 
+00000173: 29 0A 00    ; 
+00000176:             ; 
+00000176:             ; ; Units
+00000176: 45 6E 74 65 ; enter_pounds        DEFB  "Enter the number of pounds: ",0
+0000017A: 72 20 74 68 ; 
+0000017E: 65 20 6E 75 ; 
+00000182: 6D 62 65 72 ; 
+00000186: 20 6F 66 20 ; 
+0000018A: 70 6F 75 6E ; 
+0000018E: 64 73 3A 20 ; 
+00000192: 00          ; 
+00000193: 0A 45 6E 74 ; enter_pence         DEFB   "\nEnter the number of pence: ",0
+00000197: 65 72 20 74 ; 
+0000019B: 68 65 20 6E ; 
+0000019F: 75 6D 62 65 ; 
+000001A3: 72 20 6F 66 ; 
+000001A7: 20 70 65 6E ; 
+000001AB: 63 65 3A 20 ; 
+000001AF: 00          ; 
+000001B0: 45 6E 74 65 ; enter_shillings     DEFB "Enter the number of shillings: ",0
+000001B4: 72 20 74 68 ; 
+000001B8: 65 20 6E 75 ; 
+000001BC: 6D 62 65 72 ; 
+000001C0: 20 6F 66 20 ; 
+000001C4: 73 68 69 6C ; 
+000001C8: 6C 69 6E 67 ; 
+000001CC: 73 3A 20 00 ; 
+000001D0:             ; 
+000001D0:             ;     ALIGN
+000001D0:             ; 
+000001D0:             ; 
+000001D0: E3A0D801    ; main MOV             R13,#0x10000
+000001D4:             ;     ; Print welcome message
+000001D4: E24F0F76    ;     ADRL    R0, shilling_intro_txt
+000001D8: EF000003    ;     SWI     3
+000001DC:             ; 
+000001DC: E24F00BD    ;     ADRL    R0, how_to_convert
+000001E0: E2400C01    ; 
+000001E4: EF000003    ;     SWI     3
+000001E8:             ; 
+000001E8:             ;     ; Read choice
+000001E8: E24F002D    ;     ADRL    R0, choice_prompt
+000001EC: E2400C01    ; 
+000001F0: EF000003    ;     SWI     3 ; print string
+000001F4: EF000001    ;     SWI     1   ; read in 
+000001F8:             ; 
+000001F8: EF000000    ;     SWI     0   ; out char
+000001FC:             ;     ; BL     ReadIn
+000001FC:             ; 
+000001FC: E3500032    ;     CMP    R0, #'2'
+00000200: 0A000012    ;     BEQ    metric_to_shilling
+00000204:             ; 
+00000204:             ; shilling_to_metric
+00000204: E24F0F41    ;     ADRL   R0, chosen_shilling_to_metric
+00000208: EF000003    ;     SWI    3
+0000020C:             ; 
+0000020C:             ;     ; Get pounds
+0000020C: E24F009E    ;     ADRL   R0, enter_pounds
+00000210: EF000003    ;     SWI    3
+00000214: EB00001A    ;     BL     ReadIn
+00000218: E1A04000    ;     MOV    R4, R0    ; Store pounds
+0000021C:             ; 
+0000021C:             ;     ; Get shillings
+0000021C: E24F0074    ;     ADRL   R0, enter_shillings
+00000220: EF000003    ;     SWI    3
+00000224: EB000016    ;     BL     ReadIn
+00000228: E1A05000    ;     MOV    R5, R0    ; Store shillings
+0000022C:             ; 
+0000022C:             ;     ; Get pence
+0000022C: E24F00A1    ;     ADRL   R0, enter_pence
+00000230: EF000003    ;     SWI    3
+00000234: EB000012    ;     BL     ReadIn
+00000238: E1A06000    ;     MOV    R6, R0    ; Store pence
+0000023C:             ; 
+0000023C:             ;     ; Convert to decimal pounds
+0000023C: E1A00004    ;     MOV    R0, R4    ; Pounds
+00000240: E1A01005    ;     MOV    R1, R5    ; Shillings
+00000244: E1A02006    ;     MOV    R2, R6    ; Pence
+00000248: EB000026    ;     BL     ConvertToDecimal
+0000024C:             ; 
+0000024C:             ;     ; end of func so we need to go to end to avoid going in the next one
+0000024C: EA000049    ;     B      end
+00000250:             ; 
+00000250:             ; metric_to_shilling
+00000250: E24F0D06    ;     ADRL   R0, chosen_metric_to_shilling
+00000254: EF000003    ;     SWI    3
+00000258:             ; 
+00000258:             ;     ; Get decimal pounds
+00000258: E24F00EA    ;     ADRL   R0, enter_pounds
+0000025C: EF000003    ;     SWI    3
+00000260: EB000007    ;     BL     ReadIn
+00000264: E1A04000    ;     MOV    R4, R0    ; Store pounds
+00000268:             ; 
+00000268:             ;     ; Get pence
+00000268: E24F00DD    ;     ADRL   R0, enter_pence
+0000026C: EF000003    ;     SWI    3
+00000270: EB000003    ;     BL     ReadIn
+00000274:             ; 
+00000274:             ;     ; Convert to old currency
+00000274: E1A01000    ;     MOV    R1, R0    ; Pence
+00000278: E1A00004    ;     MOV    R0, R4    ; Pounds
+0000027C: EB000024    ;     BL     ConvertToOld
+00000280: EA00003C    ;     B      end
+00000284:             ; 
+00000284:             ; ; ReadIn subroutine
+00000284: E92D401E    ; ReadIn     STMFD  R13!, {R1-R4, LR}
+00000288: E3A01000    ;     MOV    R1, #0    ; initialise result
+0000028C:             ; 
+0000028C:             ; ReadLoop
+0000028C: EF000001    ;     SWI    1         ; reads
+00000290: E350000A    ;     CMP    R0, #10
+00000294: 0A000010    ;     BEQ    endReadIn
+00000298: E350000D    ;     CMP    R0, #13    ; CRLF
+0000029C: 0A00000E    ;     BEQ    endReadIn
+000002A0:             ; 
+000002A0: E350002E    ;     CMP    R0, #'.'  ; special case for .
+000002A4: 0A000004    ;     BEQ    decimal
+000002A8: E3500030    ;     CMP    R0, #'0'  
+000002AC: BAFFFFF6    ;     BLT    ReadLoop
+000002B0: E3500039    ;     CMP    R0, #'9'
+000002B4: CAFFFFF4    ;     BGT    ReadLoop
+000002B8: EA000001    ;     B next
+000002BC:             ; 
+000002BC:             ; decimal
+000002BC: EF000000    ;     SWI 0
+000002C0: EAFFFFF1    ;     B ReadLoop
+000002C4:             ; next
+000002C4: EF000000    ;     SWI    0         ; Echo char out
+000002C8:             ; 
+000002C8: E2400030    ;     SUB    R0, R0, #'0'     
+000002CC: E1A02181    ;     MOV    R2, R1, LSL #3   
+000002D0: E0822081    ;     ADD    R2, R2, R1, LSL #1  
+000002D4: E0801002    ;     ADD    R1, R0, R2       
+000002D8: EAFFFFEB    ;     B      ReadLoop
+000002DC:             ; 
+000002DC:             ; endReadIn
+000002DC: E1A00001    ;     MOV    R0, R1
+000002E0: E8BD401E    ;     LDMFD  R13!, {R1-R4, LR}
+000002E4: E1A0F00E    ;     MOV PC, LR
+000002E8:             ; 
+000002E8:             ; ConvertToDecimal
+000002E8: E92D4070    ;     STMFD  R13!, {R4-R6, LR}
+000002EC:             ;     ; Convert pounds to pence and add shillings and pence:
+000002EC:             ;     ; 1 pound = 240 pence
+000002EC: E3A070F0    ;     MOV    R7, #240          ; load immediate 240 into R7
+000002F0: E0030790    ;     MUL    R3, R0, R7        ; mult pounds (R0) by 240, result in R3
+000002F4: E1A04181    ;     MOV    R4, R1, LSL #3    ; shillings * 8 (temporary for shillings * 12)
+000002F8: E0844101    ;     ADD    R4, R4, R1, LSL #2; add shillings * 4 to get shillings * 12
+000002FC: E0833004    ;     ADD    R3, R3, R4        ; total pence from pounds and shillings
+00000300: E0833002    ;     ADD    R3, R3, R2        ; add remaining pence
+00000304: E24F0F75    ;     ADRL   R0, result_txt
+00000308: EF000003    ;     SWI    3
+0000030C:             ; 
+0000030C: E8BD4070    ;     LDMFD  R13!, {R4-R6, LR}
+00000310: E1A0F00E    ;     MOV    PC, LR
+00000314:             ; ConvertToOld
+00000314: E92D4070    ;     STMFD  R13!, {R4-R6, LR}
+00000318: E1A04001    ;     MOV    R4, R1           ; copy pence into R4
+0000031C: E1A08001    ;     MOV    R8, R1           ; save original pence in R8 for later remainder calc
+00000320: E3A05000    ;     MOV    R5, #0          ; initialise shillings counter once
+00000324:             ; division_loop
+00000324:             ; loop_check
+00000324: E354000C    ;     CMP    R4, #12
+00000328: BA000002    ;     BLT    loop_end
+0000032C: E244400C    ;     SUB    R4, R4, #12
+00000330: E2855001    ;     ADD    R5, R5, #1
+00000334: EAFFFFFA    ;     B      loop_check
+00000338:             ; loop_end
+00000338:             ;     ; Now, R5 contains shillings and R4 is the remainder.
+00000338:             ;     ; remainder is R8 - (R5 * 12)
+00000338:             ; 
+00000338: E24F0F82    ;     ADRL   R0, result_txt 
+0000033C: EF000003    ;     SWI    3
+00000340:             ; 
+00000340: E24F00FF    ;     ADRL   R0, pounds_txt    ; £ (pounds) 
+00000344: E2400C01    ; 
+00000348: EF000003    ;     SWI    3
+0000034C:             ; 
+0000034C: E24F0F7E    ;     ADRL   R0, shillings_txt ; s (shillings)
+00000350: EF000003    ;     SWI    3
+00000354: E1A00005    ;     MOV    R0, R5            ; R5 is shillings value
+00000358: EF000004    ;     SWI    4
+0000035C:             ; 
+0000035C: E24F00F9    ;     ADRL   R0, pence_txt     ; d (pence)
+00000360: E2400C01    ; 
+00000364: EF000003    ;     SWI    3
+00000368: E1A00004    ;     MOV    R0, R4            ; R4 is remainder pence
+0000036C: EF000004    ;     SWI    4
+00000370:             ;     
+00000370: E8BD4070    ;     LDMFD  R13!, {R4-R6, LR}
+00000374: E1A0F00E    ;     MOV    PC, LR
+00000378:             ; 
+00000378:             ; end
+00000378: EF000002    ; SWI    2
+
+Symbol Table: Labels
+: shilling_intro_txt                00000004  Local -- ARM
+: how_to_convert                    00000027  Local -- ARM
+: choice_prompt                     000000C3  Local -- ARM
+: chosen_metric_to_shilling         000000D8  Local -- ARM
+: chosen_shilling_to_metric         00000108  Local -- ARM
+: result_txt                        00000138  Local -- ARM
+: pounds_txt                        00000149  Local -- ARM
+: and_txt                           00000156  Local -- ARM
+: shillings_txt                     0000015C  Local -- ARM
+: pence_txt                         0000016B  Local -- ARM
+: enter_pounds                      00000176  Local -- ARM
+: enter_pence                       00000193  Local -- ARM
+: enter_shillings                   000001B0  Local -- ARM
+: main                              000001D0  Local -- ARM
+: shilling_to_metric                00000204  Local -- ARM
+: metric_to_shilling                00000250  Local -- ARM
+: ReadIn                            00000284  Local -- ARM
+: ReadLoop                          0000028C  Local -- ARM
+: decimal                           000002BC  Local -- ARM
+: next                              000002C4  Local -- ARM
+: endReadIn                         000002DC  Local -- ARM
+: ConvertToDecimal                  000002E8  Local -- ARM
+: ConvertToOld                      00000314  Local -- ARM
+: division_loop                     00000324  Local -- ARM
+: loop_check                        00000324  Local -- ARM
+: loop_end                          00000338  Local -- ARM
+: end                               00000378  Local -- ARM
