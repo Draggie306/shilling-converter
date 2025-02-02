@@ -15,12 +15,6 @@ This program allows you to convert between present-day metric currency and the o
 ## Configuration
 The conversion rates are hardcoded into the program. You can change them by changing the values of the constants in the code, towards the top.
 
-```arm
-oldPoundToNewPound	    DEFW	50
-oldShillingToNewPound	DEFW	2
-oldPenceToNewPound	    DEFW	0.8333333333333333
-```
-
 During execution, you will be asked from which currency system you want to convert from and it will then ask you for the amount. The program will then automatically convert the amount to the other currency system.
 
 
@@ -42,6 +36,7 @@ I use the "kmd" (or Komodo) assembler, made by Manchester University after follo
 ## Files
 - converter-assembly.s is the main file with the currency conversion code.
 - converter-assembly.kmd is the output file from the assembler and also the raw hexadecimal instructions for the ARM CPU.
+- converter.c is a C program that does the same thing, but in C. It is included for comparison - the logic is fairly similar and fascinating to compare!
 
 ### Note
 This does NOT abide by APCS - the Arm Procedure Call Standard. If you wish to implement this in a larger project, you will need to follow the standard by using instructions like:
